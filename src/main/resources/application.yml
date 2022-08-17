@@ -1,0 +1,29 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: restful-service
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+    defer-datasource-initialization: true
+    open-in-view: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+logging:
+  level:
+    org.springframework: info
+
+# Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
